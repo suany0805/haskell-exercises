@@ -7,9 +7,15 @@ double(2)+ double(2)
 8 -}
 
 
-{- sum[x]=x
-sum[2] -}
+{- 
+sum[x]=x
+sum[2] 
+-}
 
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+{-# HLINT ignore "Use foldr" #-}
+
+myproduct:: Num a => [a]-> a 
 myproduct []=1
 myproduct (n:ns) = n * myproduct ns
 -- product [2,3,4]
