@@ -1,13 +1,16 @@
 
-{- 
+{-
+1) 
 double (double 2)
 double(2)+ double(2)
 (2+2)   +  (2+2) 
 4+4
-8 -}
+8 
+-}
 
 
 {- 
+2)
 sum[x]=x
 sum[2] 
 -}
@@ -15,12 +18,13 @@ sum[2]
 {-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
 {-# HLINT ignore "Use foldr" #-}
 
+--3)
 myproduct:: Num a => [a]-> a 
 myproduct []=1
 myproduct (n:ns) = n * myproduct ns
 -- product [2,3,4]
 
--- 3) moving qsort larger to the beginning and qsort smaller to the end 
+-- 4) moving qsort larger to the beginning and qsort smaller to the end 
 
 qsort1:: Ord a => [a] -> [a]
 qsort1 [] = []
@@ -29,7 +33,7 @@ qsort1 (x:xs) = qsort1 large ++[x] ++ qsort1 small
                   large = [b | b <- xs , b > x] 
                   small = [a | a <- xs , a <= x]
 
--- 4) duplicates will be deleted
+-- 5) duplicates will be deleted
 qsort :: Ord a => [a] -> [a]
 qsort [] = []
 qsort (x:xs) = qsort smaller ++ [x] ++ qsort larger
