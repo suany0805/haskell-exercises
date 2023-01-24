@@ -1,3 +1,4 @@
+-- 1) Work through the examples from this chapter using ghci
 {-
 --Gets the 1st element of a non-empty list
 head [2,4,6]
